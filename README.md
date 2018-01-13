@@ -14,3 +14,8 @@ Team manager has the following features:-
  - Database seeding with demo data - manager, team, project, assignee etc.
  - Charts for visualizing project status etc.
  - Admin panel for administration.
+
+## Setup Instructions
+
+Run following commands to setup the code:
+ - npm install
