@@ -1,7 +1,24 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span class="example-spacer">First Row</span>
-    <span class="example-icon">Login</span>
-    <span class="example-icon">Register</span>
+    <span class="example-spacer">Team Manager</span>
+    <button mat-button>Login</button>
+    <button mat-button>Register</button>
+
   </mat-toolbar-row>
 </mat-toolbar>
+
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Input">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Textarea"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
