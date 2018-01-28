@@ -1,0 +1,39 @@
+ng g m app-material
+ng g s auth/auth --module=app.module
+ng g g auth/auth --module=app.module
+ng g i auth/user
+ng g c header -is
+ng g c footer
+ng g c home -is -it
+ng g c login
+ng g c signup
+ng g c users
+
+
+
+
+
+CLI DOCS
+=========
+
+- Generating a route
+----------------------
+
+The CLI supports routing in several ways:
+
+We include the @angular/router NPM package when creating or initializing a project.
+
+When you generate a module, you can use the --routing option like ng g module my-module --routing to create a separate file my-module-routing.module.ts to store the module routes.
+
+The file includes an empty Routes object that you can fill with routes to different components and/or modules.
+
+You can use the --routing option with ng new to create a app-routing.module.ts file when you create or initialize a project.
+
+
+REFERENCES
+===========
+- https://material.angularjs.org/latest/getting-started
+- https://github.com/angular/angular-cli
+- https://loiane.com/2017/07/getting-started-with-angular-material-2/#1-create-your-angular-project-with-angular-cli
+- https://loiane.com/2017/08/angular-hide-navbar-login-page/#example-1-using-ngif-to-hide-the-navbar
+https://medium.com/dailyjs/3-ways-to-communicate-between-angular-components-a1e3f3304ecb

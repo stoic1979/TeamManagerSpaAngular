@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+.left-sidenav {
+  padding: 20px;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-card-home {
+  max-width: 90%;
+  min-height: 500px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.mat-card-footer {
+  margin: 2em auto;
+  text-align: center;
+}

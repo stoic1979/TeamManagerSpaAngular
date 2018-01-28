@@ -1,40 +1,49 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { AppMaterialModule } from './app-material/app-material.module';
 import { NgModule } from '@angular/core';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import { MatFormFieldModule } from '@angular/material';
-import { MatInputModule } from '@angular/material';
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
+import { SignupComponent } from './signup/signup.component';
+import { UsersComponent } from './users/users.component';
+import { SalesComponent } from './sales/sales.component';
 import { FooterComponent } from './footer/footer.component';
-import { DashbaordComponent } from './dashbaord/dashbaord.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    LoginComponent,
     HeaderComponent,
+    SignupComponent,
+    UsersComponent,
+    SalesComponent,
     FooterComponent,
-    DashbaordComponent
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule, 
-    MatCheckboxModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatFormFieldModule,
-    MatMenuModule
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    AppMaterialModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

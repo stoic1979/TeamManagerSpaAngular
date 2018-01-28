@@ -1,5 +1,16 @@
-<div>
-  <app-header></app-header>
-  <app-dashbaord></app-dashbaord>
-  <app-footer></app-footer>
-</div>
+<app-header [sidebar]="sidebar"></app-header>
+
+<mat-drawer-container class="example-container" autosize>
+
+    <app-sidebar #sidebar></app-sidebar>
+
+    <mat-card class="mat-card-home">
+        <router-outlet ></router-outlet>
+    </mat-card>
+
+
+</mat-drawer-container>
+
+<mat-card class="mat-card-footer">
+	<app-footer></app-footer>
+</mat-card>

@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('team-manager-spa-angular App', () => {
+describe('ng-admin App', () => {
   let page: AppPage;
 
   beforeEach(() => {
