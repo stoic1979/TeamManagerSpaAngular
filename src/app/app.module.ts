@@ -22,6 +22,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { IssuesComponent } from './issues/issues.component';
 import { TeamComponent } from './team/team.component';
+import { TeamService } from './team/team.service';
 
 
 
@@ -50,7 +51,7 @@ import { TeamComponent } from './team/team.component';
     AppRoutingModule,
     AppMaterialModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, TeamService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

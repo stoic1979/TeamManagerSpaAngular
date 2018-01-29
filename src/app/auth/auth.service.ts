@@ -17,12 +17,19 @@ const API_URL = environment.apiUrl;
 
 @Injectable()
 export class AuthService {
+
+  private token: String;
+
   private loggedIn = new BehaviorSubject<boolean>(false);
 
   constructor(
     private http: HttpClient,
     private router: Router
   ) {
+  }
+
+  getToken() {
+    return this.token;
   }
 
   get isLoggedIn() {
@@ -50,7 +57,7 @@ export class AuthService {
           if (token) {
 
               // store username and jwt token in local storage to keep user logged in between page refreshes
-              localStorage.setItem('currentUser', JSON.stringify({token }));
+              localStorage.setItem('userToken', token);
 
               this.loggedIn.next(true);
               this.router.navigate(['/']);
@@ -72,4 +79,5 @@ export class AuthService {
     console.error('AuthService::handleError', error);
     return Observable.throw(error);
   }
-}
+  
+}//AuthService

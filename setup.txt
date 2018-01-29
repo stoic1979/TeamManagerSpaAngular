@@ -13,6 +13,8 @@ ng g c projects
 ng g c issues
 ng g c team
 
+ng g s team/team --module=app.module
+
 
 
 CLI DOCS
