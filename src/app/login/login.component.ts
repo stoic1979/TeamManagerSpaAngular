@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      this.authService.login(this.form.value); // {7}
+      this.authService.login(this.form.value);
     }
-    this.formSubmitAttempt = true;             // {8}
+    this.formSubmitAttempt = true;
   }
 }

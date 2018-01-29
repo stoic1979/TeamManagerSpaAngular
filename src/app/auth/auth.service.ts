@@ -2,28 +2,74 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { User } from './user';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Response } from '@angular/http';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
+import { environment } from '../../environments/environment';
+
+const API_URL = environment.apiUrl;
+
 
 @Injectable()
 export class AuthService {
-  private loggedIn = new BehaviorSubject<boolean>(false); // {1}
-
-  get isLoggedIn() {
-    return this.loggedIn.asObservable(); // {2}
-  }
+  private loggedIn = new BehaviorSubject<boolean>(false);
 
   constructor(
+    private http: HttpClient,
     private router: Router
-  ) {}
-
-  login(user: User){
-    if (user.userName !== '' && user.password != '' ) { // {3}
-      this.loggedIn.next(true);
-      this.router.navigate(['/']);
-    }
+  ) {
   }
 
-  logout() {                            // {4}
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
+  }
+
+  login(user: User){
+
+     const body = new HttpParams()
+    .set('email', user.userName)
+    .set('password', user.password);
+
+    this.http.post(API_URL + "/users/login",
+    body.toString(),
+    {
+      headers: new HttpHeaders()
+        .set('Content-Type', 'application/x-www-form-urlencoded')
+    }
+    ).
+    subscribe((response: Response) => {
+
+          console.log("resp: " +  JSON.stringify(response) );
+
+          const token = response && response.token;
+          if (token) {
+
+              // store username and jwt token in local storage to keep user logged in between page refreshes
+              localStorage.setItem('currentUser', JSON.stringify({token }));
+
+              this.loggedIn.next(true);
+              this.router.navigate(['/']);
+  
+              return true;
+          } else {
+              return false;
+          }
+        });
+
+  }
+
+  logout() {
     this.loggedIn.next(false);
     this.router.navigate(['/login']);
+  }
+
+  private handleError (error: Response | any) {
+    console.error('AuthService::handleError', error);
+    return Observable.throw(error);
   }
 }
