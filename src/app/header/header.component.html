@@ -1,14 +1,16 @@
 <mat-toolbar color="primary" *ngIf="isLoggedIn$ | async">
   <span>
     <img src="assets/images/admin_small.png" width="30" height="20" class="angular-logo">
-    NgAdmin
+    Team Manager
   </span>
       <button type="button" mat-icon-button (click)="toggleSidebar()">
             <mat-icon>menu</mat-icon>
     </button>
   <span class="fill-remaining-space"></span>
-  <button mat-button routerLink="users">Users</button>
-  <button mat-button routerLink="sales">Sales</button>
+  <button mat-button routerLink="/">Home</button>
+  <button mat-button routerLink="/team">Team</button>
+  <button mat-button routerLink="/projects">Projects</button>
+  <button mat-button routerLink="/issues">Issues</button>
 
       <mat-menu #menu="matMenu">
         <button mat-menu-item>
