@@ -9,7 +9,9 @@ ng g c login
 ng g c signup
 ng g c users
 
-
+ng g c projects
+ng g c issues
+ng g c team
 
 
 

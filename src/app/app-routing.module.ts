@@ -6,6 +6,10 @@ import { LoginComponent } from './login/login.component'
 import { SignupComponent } from './signup/signup.component'
 import { UsersComponent } from './users/users.component'
 import { SalesComponent } from './sales/sales.component'
+import { ProjectsComponent } from './projects/projects.component'
+import { IssuesComponent } from './issues/issues.component'
+import { TeamComponent } from './team/team.component'
+
 
 import { AuthGuard } from './auth/auth.guard'
 
@@ -16,6 +20,9 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
   { path: 'sales', component: SalesComponent, canActivate: [AuthGuard] },
+  { path: 'projects', component: ProjectsComponent, canActivate: [AuthGuard] },
+  { path: 'issues', component: IssuesComponent, canActivate: [AuthGuard] },
+  { path: 'team', component: TeamComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

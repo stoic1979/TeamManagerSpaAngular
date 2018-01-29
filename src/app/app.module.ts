@@ -19,6 +19,9 @@ import { UsersComponent } from './users/users.component';
 import { SalesComponent } from './sales/sales.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { IssuesComponent } from './issues/issues.component';
+import { TeamComponent } from './team/team.component';
 
 
 
@@ -33,7 +36,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     UsersComponent,
     SalesComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProjectsComponent,
+    IssuesComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
