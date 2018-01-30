@@ -7,7 +7,7 @@ import {
   MatButtonModule,
   MatMenuModule,
   MatCardModule,
-  MatInputModule
+  MatInputModule,
 } from '@angular/material';
 
 import {MatFormFieldModule} from '@angular/material/form-field';

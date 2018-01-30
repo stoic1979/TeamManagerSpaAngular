@@ -29,13 +29,11 @@ export class TeamComponent implements OnInit {
   	this.teamService.getAllTeamMembers()
   		.subscribe(response => {
       		console.log("[TeamComponent] ---->> resp: " +  JSON.stringify(response) );
-      		
-      		
 
       		that.members = response;
 
       		that.displayedColumns = ['_id', 'name', 'email'];
-  			that.dataSource = new MatTableDataSource<Member>(that.members);
+  		   	that.dataSource = new MatTableDataSource<Member>(that.members);
 
       		return response;
     	});

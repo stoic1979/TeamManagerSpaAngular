@@ -34,8 +34,10 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      this.authService.login(this.form.value);
+        this.authService.signup(this.form.value);
+        console.log('[Signup] :: Register Successfuly')
     }
-    this.formSubmitAttempt = true;
+        this.formSubmitAttempt = true;
   }
+
 }

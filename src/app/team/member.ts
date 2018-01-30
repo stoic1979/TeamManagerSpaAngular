@@ -1,10 +1,10 @@
 export interface User {
-	public first_name: String;
-	public last_name: String;
-	public email: String;
+	 first_name: String;
+	 last_name: String;
+	 email: String;
 }
 
 export interface Member {
-	public _id: String;
-	public user: User;
+	 _id: String;
+	 user: User;
 }

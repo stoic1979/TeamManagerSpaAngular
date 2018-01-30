@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -23,8 +23,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { IssuesComponent } from './issues/issues.component';
 import { TeamComponent } from './team/team.component';
 import { TeamService } from './team/team.service';
-
-
+import { UsersService } from './users/users.service';
 
 
 @NgModule({
@@ -51,7 +50,7 @@ import { TeamService } from './team/team.service';
     AppRoutingModule,
     AppMaterialModule
   ],
-  providers: [AuthService, AuthGuard, TeamService],
+  providers: [AuthService, AuthGuard, TeamService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

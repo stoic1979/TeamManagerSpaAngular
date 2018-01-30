@@ -7,5 +7,7 @@ export const environment = {
   production: false,
 
   // URL of development API
-  apiUrl: 'https://teammanager9.herokuapp.com'
+   apiUrl: 'https://teammanager9.herokuapp.com'
+  // apiUrl:  'http://192.168.11.6:3002/api'
+
 };

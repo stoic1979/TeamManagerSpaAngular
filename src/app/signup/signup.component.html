@@ -2,21 +2,23 @@
   <mat-card>
     <mat-card-content>
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <p>Signup</p>
-        <mat-input-container class="full-width-input">
-          <input matInput placeholder="User" 
+        <h1>Sign Up</h1>
+       
+       <mat-input-container class="full-width-input">
+          <input matInput placeholder="Email" 
                  formControlName="userName" required>
           <mat-error *ngIf="isFieldInvalid('userName')">
             Please inform your user name
           </mat-error>
         </mat-input-container>
+       
         <mat-input-container class="full-width-input">
-          <input matInput type="password" placeholder="Password" 
-                 formControlName="password" required>
+          <input matInput type="password" placeholder="Password" formControlName="password" required>
           <mat-error *ngIf="isFieldInvalid('password')">
             Please inform your password
           </mat-error>
         </mat-input-container>
+       
         <mat-input-container class="full-width-input">
           <input matInput type="password" placeholder="Confirm Password" 
                  formControlName="password1" required>
@@ -24,6 +26,7 @@
             Please inform your password
           </mat-error>
         </mat-input-container>
+       
         <button mat-raised-button color="primary" type="submit">Sign Up</button>
         <button mat-raised-button color="primary" type="button" routerLink="/login">Login</button>
       </form>
