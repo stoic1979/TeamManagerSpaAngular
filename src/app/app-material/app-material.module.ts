@@ -8,6 +8,7 @@ import {
   MatMenuModule,
   MatCardModule,
   MatInputModule,
+  MatSelectModule
 } from '@angular/material';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -31,7 +32,8 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     MatSidenavModule,
     MatDividerModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   declarations: []
 })

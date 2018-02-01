@@ -8,6 +8,17 @@ import { AuthService } from './../auth/auth.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+ 
+  roles = [
+          { value:     'MANAGER',
+            viewValue: 'MANAGER'},
+            
+          { value:     'WORKER',
+            viewValue: 'WORKER'},
+
+          { value:     'ADMIN',
+            viewValue: 'ADMIN'}  
+  ];
 
   form: FormGroup;
   private formSubmitAttempt: boolean;
@@ -17,11 +28,16 @@ export class SignupComponent implements OnInit {
     private authService: AuthService
   ) {}
 
+
+
   ngOnInit() {
     this.form = this.fb.group({
-      userName: ['', Validators.required],
-      password: ['', Validators.required],
-      password1: ['', Validators.required]
+      first_name: ['', Validators.required],
+      last_name:  ['', Validators.required],
+      email:      ['', Validators.required],
+      role:       ['', Validators.required],
+      password:   ['', Validators.required],
+      team_name:  ['', Validators.required]
     });
   }
 

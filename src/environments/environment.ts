@@ -7,7 +7,8 @@ export const environment = {
   production: false,
 
   // URL of development API
-   apiUrl: 'https://teammanager9.herokuapp.com'
-  // apiUrl:  'http://192.168.11.6:3002/api'
-
+  apiUrl: 'https://teammanager9.herokuapp.com',
+  // apiUrl:  'http://192.168.11.6:3002/api',
+  API_ENDPOINT: 'http://192.168.11.6:3002/api'
+  // API_ENDPOINT:  'https://jsonplaceholder.typicode.com/users'
 };

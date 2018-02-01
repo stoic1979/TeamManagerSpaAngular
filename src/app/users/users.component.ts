@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { UsersService } from '../users/users.service';
+import { Users } from '../users/users';
+
 
 @Component({
   selector: 'app-users',
@@ -7,13 +10,20 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  allUsers: any;
+  user: any;
 
 	displayedColumns = ['position', 'name', 'weight', 'code'];
   dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
 
-  constructor() { }
+  constructor(private userService: UsersService) { }
 
   ngOnInit() {
+    this.userService.getUsers().subscribe((res) => {
+         console.log('[UserComponets] All Users ::'    + JSON.stringify(this.allUsers));
+         this.user = new Users(this.allUsers);
+         console.log('[UserComponets] All Users ::'    + JSON.stringify(this.user));
+    });
   }
 
 }

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from './app-material/app-material.module';
@@ -45,6 +47,7 @@ import { UsersService } from './users/users.service';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,

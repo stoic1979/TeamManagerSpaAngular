@@ -4,11 +4,27 @@
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <h1>Sign Up</h1>
        
+        <mat-input-container class="full-width-input">
+          <input matInput placeholder="FirstName" 
+                 formControlName="first_name" required>
+           <mat-error *ngIf="isFieldInvalid('first_name')">
+            Please inform your First name
+           </mat-error>
+        </mat-input-container>
+
+        <mat-input-container class="full-width-input">
+          <input matInput placeholder="LastName" 
+                 formControlName="last_name" required>
+          <mat-error *ngIf="isFieldInvalid('last_name')">
+            Please inform your Last name
+          </mat-error>
+        </mat-input-container>
+
        <mat-input-container class="full-width-input">
           <input matInput placeholder="Email" 
-                 formControlName="userName" required>
-          <mat-error *ngIf="isFieldInvalid('userName')">
-            Please inform your user name
+                 formControlName="email" required>
+           <mat-error *ngIf="isFieldInvalid('email')">
+            Please inform your Email Address
           </mat-error>
         </mat-input-container>
        
@@ -18,12 +34,21 @@
             Please inform your password
           </mat-error>
         </mat-input-container>
-       
+
+        <mat-form-field class ="full-width-input">
+         <mat-select placeholder="Role"  formControlName="role">
+        <mat-option *ngFor="let role of roles" [value]="role.value">
+        {{ role.viewValue }}
+        </mat-option>
+        </mat-select>
+       </mat-form-field>
+
+
         <mat-input-container class="full-width-input">
-          <input matInput type="password" placeholder="Confirm Password" 
-                 formControlName="password1" required>
-          <mat-error *ngIf="isFieldInvalid('password1')">
-            Please inform your password
+          <input matInput placeholder="Team Name" 
+                 formControlName="team_name" required>
+          <mat-error *ngIf="isFieldInvalid('team_name')">
+            Please inform your user name
           </mat-error>
         </mat-input-container>
        
