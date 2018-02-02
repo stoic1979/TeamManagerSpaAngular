@@ -8,6 +8,7 @@ import { AuthService } from './../auth/auth.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  public isRole: boolean = false;
  
   roles = [
           { value:     'MANAGER',
@@ -54,6 +55,14 @@ export class SignupComponent implements OnInit {
         console.log('[Signup] :: Register Successfuly')
     }
         this.formSubmitAttempt = true;
+  }
+
+  isSelectedValue(value){
+    if(value == 'MANAGER') {
+      this.isRole = true;
+    }else{
+      this.isRole = false;
+    }
   }
 
 }

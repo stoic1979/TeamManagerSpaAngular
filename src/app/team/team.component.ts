@@ -4,6 +4,8 @@ import { TeamService } from './team.service';
 import { Member } from './member';
 
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -18,26 +20,31 @@ export class TeamComponent implements OnInit {
 	dataSource: MatTableDataSource<Member>;
 
   constructor(
-  	private teamService: TeamService
+  	private teamService: TeamService,
+    private router: Router
   	) { }
 
   ngOnInit() {
 
-  	let that = this;
+  	// let that = this;
 
-  	console.log("[TeamComponent] :: getting all team members");
-  	this.teamService.getAllTeamMembers()
-  		.subscribe(response => {
-      		console.log("[TeamComponent] ---->> resp: " +  JSON.stringify(response) );
+  	// console.log("[TeamComponent] :: getting all team members");
+  	// this.teamService.getAllTeamMembers()
+  	// 	.subscribe(response => {
+   //    		console.log("[TeamComponent] ---->> resp: " +  JSON.stringify(response) );
 
-      		that.members = response;
+   //    		that.members = response;
 
-      		that.displayedColumns = ['_id', 'name', 'email'];
-  		   	that.dataSource = new MatTableDataSource<Member>(that.members);
+   //    		that.displayedColumns = ['_id', 'name', 'email'];
+  	// 	   	that.dataSource = new MatTableDataSource<Member>(that.members);
 
-      		return response;
-    	});
+   //    		return response;
+   //  	});
   	//console.log("[TeamComponent] ::  m=" + JSON.stringify(m) );
+  }
+
+  onInvitation() {
+   this.router.navigate(['/inviteTeamMember']);
   }
 
 }

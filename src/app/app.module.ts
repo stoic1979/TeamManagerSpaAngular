@@ -26,6 +26,8 @@ import { IssuesComponent } from './issues/issues.component';
 import { TeamComponent } from './team/team.component';
 import { TeamService } from './team/team.service';
 import { UsersService } from './users/users.service';
+import { InviteTeamMemberComponent } from './invite-team-member/invite-team-member.component';
+import { InviteTmMemberService } from './invite-team-member/invite-tm-member.service';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { UsersService } from './users/users.service';
     SidebarComponent,
     ProjectsComponent,
     IssuesComponent,
-    TeamComponent
+    TeamComponent,
+    InviteTeamMemberComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import { UsersService } from './users/users.service';
     AppRoutingModule,
     AppMaterialModule
   ],
-  providers: [AuthService, AuthGuard, TeamService, UsersService],
+  providers: [AuthService, AuthGuard, TeamService, UsersService, InviteTmMemberService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

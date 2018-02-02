@@ -6,5 +6,5 @@ export interface User {
 
 export interface Member {
 	 _id: String;
-	 user: User;
+	  user: User;
 }

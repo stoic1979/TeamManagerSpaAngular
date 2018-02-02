@@ -1,0 +1,17 @@
+<div>
+	<div>
+    <div><h1>Invite Team Member</h1></div>
+	<mat-card>
+	<mat-input-container class="full-width-input">
+          <input matInput type="email" placeholder="Email" 
+                 formControlName="password" required>
+          <mat-error *ngIf="isFieldInvalid('email')">
+            Please inform your email
+          </mat-error>
+        </mat-input-container>
+        <button mat-raised-button color="primary" type="submit">Invite</button>
+     </mat-card>
+	</div>
+	<div>
+	</div>
+</div>

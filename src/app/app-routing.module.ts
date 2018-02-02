@@ -9,6 +9,7 @@ import { SalesComponent } from './sales/sales.component'
 import { ProjectsComponent } from './projects/projects.component'
 import { IssuesComponent } from './issues/issues.component'
 import { TeamComponent } from './team/team.component'
+import { InviteTeamMemberComponent } from './invite-team-member/invite-team-member.component'
 
 
 import { AuthGuard } from './auth/auth.guard'
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent, canActivate: [AuthGuard] },
   { path: 'issues', component: IssuesComponent, canActivate: [AuthGuard] },
   { path: 'team', component: TeamComponent, canActivate: [AuthGuard] },
+  { path: 'inviteTeamMember', component: InviteTeamMemberComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

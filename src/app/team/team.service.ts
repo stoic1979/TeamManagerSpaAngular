@@ -21,29 +21,29 @@ export class TeamService {
   constructor(private http: HttpClient) { }
 
 
-    getAllTeamMembers () {
-        const header = this.createAuthHeader();
+    // getAllTeamMembers () {
+    //     const header = this.createAuthHeader();
 
-        return this.http.get('https://teammanager9.herokuapp.com/members/all',
-          {
-      		headers: new HttpHeaders()
-        	.set('x-access-token', this.getUserToken())
-    	  })
+    //     return this.http.get('https://teammanager9.herokuapp.com/members/all',
+    //       {
+    //   		headers: new HttpHeaders()
+    //     	.set('x-access-token', this.getUserToken())
+    // 	  })
         
-    }
+    // }
 
 
-    getUserToken () {
-        return localStorage.getItem('userToken') || '';
-    }
+    // getUserToken () {
+    //     return localStorage.getItem('userToken') || '';
+    // }
 
-    createAuthHeader() {
-        let headers = new HttpHeaders();
-        const token = this.getUserToken();
-        console.log("using token: " + token);
-        headers.set('x-access-token', token);
-        return headers;
-    }
+    // createAuthHeader() {
+    //     let headers = new HttpHeaders();
+    //     const token = this.getUserToken();
+    //     console.log("using token: " + token);
+    //     headers.set('x-access-token', token);
+    //     return headers;
+    // }
 
 
 }//TeamService

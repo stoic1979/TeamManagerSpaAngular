@@ -1,0 +1,19 @@
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.layoutHeader {
+	flex: 1 1 auto;
+	float: right;
+
+}
+
+button {
+	background: blue;
+	text-align: center;
+	color: white;
+	height: 35px;
+	font-size: 22px;
+	
+}
