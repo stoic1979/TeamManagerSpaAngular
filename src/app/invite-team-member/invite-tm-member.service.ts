@@ -15,20 +15,17 @@ const API_URL = environment.apiUrl;
 @Injectable()
 export class InviteTmMemberService {
 
-
   constructor(
   	private http: HttpClient,
     private router: Router){ }
 
   inviteMember(user: User){
   	 const body = new HttpParams().set('email', user.email);
-     this.http.post(API_URL + "/users/login",body.toString(),{
+     this.http.post(API_URL + "/members/invite_team_member",body.toString(),{
      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')}).subscribe((res) => {
        console.log("Response : Succesfuly" +  JSON.stringify(res));
        this.router.navigate(['/']);
      },(err) => {
-       const errBody = err.json();
-       console.log("Response : ErrorBody" +  JSON.stringify(errBody));
        console.log("Response : ErrorBody" +  JSON.stringify(err));
      });
   }

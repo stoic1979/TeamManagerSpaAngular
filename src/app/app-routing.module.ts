@@ -27,6 +27,18 @@ const routes: Routes = [
   { path: 'inviteTeamMember', component: InviteTeamMemberComponent, canActivate: [AuthGuard] },
 ];
 
+// const routes: Routes = [
+//   { path: '', component: HomeComponent },
+//   { path: 'login', component: LoginComponent },
+//   { path: 'signup', component: SignupComponent },
+//   { path: 'users', component: UsersComponent },
+//   { path: 'sales', component: SalesComponent},
+//   { path: 'projects', component: ProjectsComponent},
+//   { path: 'issues', component: IssuesComponent },
+//   { path: 'team', component: TeamComponent},
+//   { path: 'inviteTeamMember', component: InviteTeamMemberComponent},
+// ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

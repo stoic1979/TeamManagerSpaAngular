@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Response } from '@angular/http';
-
+import { Http, Headers } from '@angular/http';
+import { User } from '../auth/user';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -12,38 +13,43 @@ import 'rxjs/add/observable/throw';
 import { environment } from '../../environments/environment';
 
 
-const API_URL = environment.apiUrl;
-
-
 @Injectable()
 export class TeamService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: Http) { }
 
 
-    // getAllTeamMembers () {
-    //     const header = this.createAuthHeader();
+     getAllTeamMembers (): Observable<User[]> {
+        const header = this.createAuthorizationHeader();
 
-    //     return this.http.get('https://teammanager9.herokuapp.com/members/all',
-    //       {
-    //   		headers: new HttpHeaders()
-    //     	.set('x-access-token', this.getUserToken())
-    // 	  })
-        
-    // }
+        return this.http.get(`${environment.API_ENDPOINT}/members/all`, { headers: header }).map((res) => {
+            const result = res.json();
+            const users = [];
+            for (const list of result.data) {
+                 const  user = new User(list);
+                users.push(user);
+            }
+            return users;
+        });
+    }
 
+    saveToken (token: string) {
+        localStorage.setItem('userToken', token);
+    }
 
-    // getUserToken () {
-    //     return localStorage.getItem('userToken') || '';
-    // }
+    getUserToken () {
+        return localStorage.getItem('userToken') || '';
+    }
+    
 
-    // createAuthHeader() {
-    //     let headers = new HttpHeaders();
-    //     const token = this.getUserToken();
-    //     console.log("using token: " + token);
-    //     headers.set('x-access-token', token);
-    //     return headers;
-    // }
+    createAuthorizationHeader () {
+        const headers = new Headers();
+        const token = this.getUserToken();
+        console.log('[TeamServices] createAuthorizationHeader() Team ServicesToken ' + JSON.stringify(token));
+        headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
+        headers.append('x-access-token', token);
+        return headers;
+    }
 
 
 }//TeamService

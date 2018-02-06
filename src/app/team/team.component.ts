@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { TeamService } from './team.service';
 
 import { Member } from './member';
+import { User } from '../auth/user';
 
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
+import { UsersService } from '../users/users.service';
 
 
 
@@ -15,36 +18,20 @@ import { Router } from '@angular/router';
 })
 export class TeamComponent implements OnInit {
 
-	members: any;
-	displayedColumns: String[];
-	dataSource: MatTableDataSource<Member>;
+	allUsers: any;
+  user: any;
 
-  constructor(
-  	private teamService: TeamService,
-    private router: Router
-  	) { }
+  displayedColumns = ['position', 'name', 'email', 'teamName'];
+  dataSource = new MatTableDataSource<Element>();
+
+  constructor(private userService: UsersService,
+              private teamService: TeamService) { }
 
   ngOnInit() {
 
-  	// let that = this;
-
-  	// console.log("[TeamComponent] :: getting all team members");
-  	// this.teamService.getAllTeamMembers()
-  	// 	.subscribe(response => {
-   //    		console.log("[TeamComponent] ---->> resp: " +  JSON.stringify(response) );
-
-   //    		that.members = response;
-
-   //    		that.displayedColumns = ['_id', 'name', 'email'];
-  	// 	   	that.dataSource = new MatTableDataSource<Member>(that.members);
-
-   //    		return response;
-   //  	});
-  	//console.log("[TeamComponent] ::  m=" + JSON.stringify(m) );
-  }
-
-  onInvitation() {
-   this.router.navigate(['/inviteTeamMember']);
+    this.teamService.getAllTeamMembers().subscribe((res)=> {
+      console.log('[TeamMebers] All TeamMambers ::'    + JSON.stringify(res));
+    });
   }
 
 }

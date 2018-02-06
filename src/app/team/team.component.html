@@ -1,41 +1,40 @@
-<div class="layoutHeader">
+<!-- <div class="layoutHeader">
     <button (click)="onInvitation()">
     Invite Team Member
   </button>
-</div>
+</div> -->
 
-<!-- <div class="example-container mat-elevation-z8">
-
+<div class="example-container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource">
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- Position Column -->
-<!--     <ng-container matColumnDef="S.no">
+    <ng-container matColumnDef="position">
       <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
-<!--     <ng-container matColumnDef="User name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Users </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-    </ng-container> -->
+    </ng-container>
 
     <!-- Weight Column -->
-<!--     <ng-container matColumnDef="Email">
-      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-    </ng-container> -->
+    </ng-container>
 
     <!-- Symbol Column -->
-<!--     <ng-container matColumnDef="Team">
-      <mat-header-cell *matHeaderCellDef> Code </mat-header-cell>
+    <ng-container matColumnDef="teamName">
+      <mat-header-cell *matHeaderCellDef> Team Name </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
-    </ng-container> -->
+    </ng-container>
 
-<!--     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
-</div>  -->
+</div>
+
+
+
+
